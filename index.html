@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Little Giant COGS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body ng-app='COGS'>
+
+<div ng-controller="MainCtrl" >
+  <h2>Cost of Goods</h2>
+    
+    <p class='title'>Cost of Goods: {{costOfGoods | currency}}</p>
+    <input type="number" placeholder='input the initial Cost of Goods' class="form-control" ng-model="costOfGoods">
+   
+    <p class='title'>Freight In: {{freightIn | currency}}</p>
+    <input type="number" placeholder='input Freight In' class="form-control" ng-model="freightIn">
+     
+     <p class='title'>Sales Cost: {{salesCost}}%</p>
+    <input type="number" placeholder='input Sales Cost' class="form-control" ng-model="salesCost">
+ 
+ <h2 class='h'>Partial Total: {{ total(costOfGoods, freightIn, salesCost) | currency}}</h2>
+  
+
+<!--     <p class='title'>Returns: {{returns | currency}}</p>
+    <input type="number" class="form-control" ng-model="returns">
+ <p>returns: {{ GrandTotal(costOfGoods, freightIn, salesCost, repFee, dealerRepFee, returns) | currency}}</p> -->
+
+    <p class='title'>Rep Fee: {{repFee}}%</p>
+    <input type="number" placeholder='input Rep Fee' class="form-control" ng-model="repFee">
+<p>Rep Fee Total: {{ repFeeTotal(costOfGoods, freightIn, salesCost, repFee) | currency}}</p>
+
+     <p class='title'>Dealer Rep Fee: {{dRepFee}}%</p>
+    <input type="number" placeholder='input Dealer Rep Fee' class="form-control" ng-model="dRepFee" >
+ <p>Dealer Rep Fee Total: {{ dRepFeeTotal(costOfGoods, freightIn, salesCost, dRepFee) | currency}}</p>
+
+
+
+
+<!-- 
+ <h2 class='h'>Grand Total: {{ GrandTotal(costOfGoods, freightIn, salesCost, repFee, dealerRepFee, returns) | currency}}</h2>
+ -->
+
+
+
+
+
+
+</div>
+
+ <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+        <script src="main.js"></script>
+</body>
+</html>
