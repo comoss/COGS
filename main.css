@@ -13,9 +13,18 @@ body {
 }*/
 
 p {
-	margin-top: 1em;
+	margin-top: .25em;
 }
 
+.line {
+	border-bottom: solid 1px black;
+	/*margin-bottom: 2em;
+	margin-top: 2em;*/
+}
+
+.align {
+	margin-bottom: 2em;
+}
 
 
 
@@ -71,10 +80,10 @@ p {
 
 }
 
-.align {
+/*.align {
 	display: inline-block;
 	margin-left: 1em;
-}
+}*/
 
 }
 
