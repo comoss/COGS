@@ -2,19 +2,74 @@ body {
 	background-color: #FF7519;
 	} 
 
-.form-control {
+/*.box {
 	max-width: 60%;
+	margin: auto;
+}
+.form-control {
+	max-width: 70%;
 	margin: auto
 
-}
+}*/
 
 p {
 	margin-top: 1em;
 }
 
+
+
+
+@media all and (max-width: 699px) and (min-width: 320px) {
+  
 .box {
-	max-width: 50%;
+	max-width: 90%;
 	margin: auto;
+}
+.form-control {
+	max-width: 90%;
+	margin: auto
+
+}
+}
+
+@media all and (max-width: 900px) and (min-width: 700px) {
+  
+.box {
+	max-width: 70%;
+	margin: auto;
+}
+.form-control {
+	max-width: 70%;
+	margin: auto
+
+}
+}
+
+@media all and (max-width: 1199px) and (min-width: 900px) {
+  
+.box {
+	max-width: 60%;
+	margin: auto;
+}
+.form-control {
+	max-width: 60%;
+	margin: auto
+
+}
+}
+
+
+@media all and  (min-width: 1200px) {
+  
+.box {
+	max-width: 45%;
+	margin: auto;
+}
+.form-control {
+	max-width: 40%;
+	margin: auto
+
+}
 }
 
 /** {
