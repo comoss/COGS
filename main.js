@@ -70,7 +70,7 @@ var arrMar = []
 			var RET = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + returns/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
 			var T = ((costOfGoods + freightIn) * (1 + salesCost/100));
 			var MAR =  (1 + margin/100)
-			var total = (REP + DREP + RET + T) + MAR
+			var total = (REP + DREP + RET + T) * MAR
   			return total;  	
   			$scope.arrGrandTotal.push(total);	
 
