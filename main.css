@@ -66,12 +66,18 @@ p {
 	margin: auto;
 }
 .form-control {
-	max-width: 40%;
-	margin: auto
+	max-width: 100%;
+	/*margin: auto;*/
 
 }
+
+.align {
+	display: inline-block;
+	margin-left: 1em;
 }
 
-/** {
+}
+
+/* {
    border: 1px solid red !important;
 }*/
