@@ -7,6 +7,7 @@ var COGS = angular.module('COGS', []);
       $scope.repFee = '';
       $scope.returns = '';
       $scope.dRepFee = '';
+      $scope.margin = ''; 
    
 
       var arrTotal = []
@@ -19,38 +20,62 @@ var COGS = angular.module('COGS', []);
   	};
 
 
-  	var arrRep = []
+	var arrRep = []
   	$scope.repFeeTotal = function(costOfGoods, freightIn, salesCost, repFee) { 
   		if(costOfGoods || freightIn || salesCost || repFee) {
-  			var total2 = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + repFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
-  			return total2;  	
-  			$scope.arrRep.push(total2);	
+  			var total = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + repFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+  			return total;  	
+  			$scope.arrRep.push(total);	
+  			}
+  	};
+
+  	var arrRet = []
+  	$scope.Returns = function(costOfGoods, freightIn, salesCost, returns) { 
+  		if(costOfGoods || freightIn || salesCost || returns) {
+  			var total = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + returns/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+  			return total;  	
+  			$scope.arrRet.push(total);	
   			}
   	};
 
 	var arrDRep = []
   	$scope.dRepFeeTotal = function(costOfGoods, freightIn, salesCost, dRepFee) { 
   		if(costOfGoods || freightIn || salesCost || dRepFee) {
-  			var total3 = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + dRepFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
-  			return total3;  	
-  			$scope.arrDRep.push(total3);	
+  			var total = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + dRepFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+  			return total;  	
+  			$scope.arrDRep.push(total);	
   			}
   	};
 
+var arrMar = []
+  	$scope.Margin = function(costOfGoods, freightIn, salesCost, repFee, dRepFee, returns, margin) { 
+  		if(costOfGoods || freightIn || salesCost || repFee || dRepFee || returns) {
+  			var REP = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + repFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+  			var DREP = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + dRepFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+			var RET = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + returns/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+			var T = ((costOfGoods + freightIn) * (1 + salesCost/100));
+			var MAR =  (1 + margin/100);
+			var total = (((REP + DREP + RET + T) * MAR) - (REP + DREP + RET + T));
+  			return total;  	
+  			$scope.Margin.push(total);
+		}
+  	};
 
 
-   // var arrGrandTotal = []
-  	// $scope.GrandTotal = function(costOfGoods, freightIn, salesCost, repFee, dealerRepFee, returns) { 
-  	// 	if(costOfGoods || freightIn || salesCost || repFee || dealerRepFee || returns) {
-  	// 		var REP = ((costOfGoods * (1 + salesCost/100)) + freightIn) * (1 + repFee/100);
-  	// 		var DREP = ((costOfGoods * (1 + salesCost/100)) + freightIn) * (1 + dealerRepFee/100);
-			// var RET = ((costOfGoods * (1 + salesCost/100)) + freightIn) + returns
-			// var total = REP + DREP + RET
-  	// 		return total;  	
-  	// 		$scope.arrGrandTotal.push(total);	
+   var arrGrandTotal = []
+  	$scope.GrandTotal = function(costOfGoods, freightIn, salesCost, repFee, dRepFee, returns, margin) { 
+  		if(costOfGoods || freightIn || salesCost || repFee || dRepFee || returns) {
+  			var REP = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + repFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+  			var DREP = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + dRepFee/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+			var RET = (((costOfGoods + freightIn) * (1 + salesCost/100)) * (1 + returns/100)) - ((costOfGoods + freightIn) * (1 + salesCost/100))
+			var T = ((costOfGoods + freightIn) * (1 + salesCost/100));
+			var MAR =  (1 + margin/100)
+			var total = (REP + DREP + RET + T) * MAR
+  			return total;  	
+  			$scope.arrGrandTotal.push(total);	
 
-  	// 		}
-  	// };
+  			}
+  	};
 
 
 

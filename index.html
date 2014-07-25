@@ -10,39 +10,43 @@
 </head>
 <body ng-app='COGS'>
 
-<div ng-controller="MainCtrl" >
+<div ng-controller="MainCtrl" class='box'>
   <h2>Cost of Goods</h2>
     
-    <p class='title'>Cost of Goods: {{costOfGoods | currency}}</p>
+    <p class='lead'>Cost of Goods: {{costOfGoods | currency}}</p>
     <input type="number" placeholder='input the initial Cost of Goods' class="form-control" ng-model="costOfGoods">
    
-    <p class='title'>Freight In: {{freightIn | currency}}</p>
+    <p class='lead'>Freight In: {{freightIn | currency}}</p>
     <input type="number" placeholder='input Freight In' class="form-control" ng-model="freightIn">
      
-     <p class='title'>Sales Cost: {{salesCost}}%</p>
+     <p class='lead'>Sales Cost: {{salesCost}}%</p>
     <input type="number" placeholder='input Sales Cost' class="form-control" ng-model="salesCost">
  
- <h2 class='h'>Partial Total: {{ total(costOfGoods, freightIn, salesCost) | currency}}</h2>
+ <h2>Partial Total: {{ total(costOfGoods, freightIn, salesCost) | currency}}</h2>
   
 
-<!--     <p class='title'>Returns: {{returns | currency}}</p>
-    <input type="number" class="form-control" ng-model="returns">
- <p>returns: {{ GrandTotal(costOfGoods, freightIn, salesCost, repFee, dealerRepFee, returns) | currency}}</p> -->
+    <p class='lead'>Returns: {{returns}}%</p>
+    <input type="number" placeholder='Returns go here :D' class="form-control" ng-model="returns">
+ <p class='lead'>returns: {{ Returns(costOfGoods, freightIn, salesCost, returns) | currency}}</p>
 
-    <p class='title'>Rep Fee: {{repFee}}%</p>
-    <input type="number" placeholder='input Rep Fee' class="form-control" ng-model="repFee">
-<p>Rep Fee Total: {{ repFeeTotal(costOfGoods, freightIn, salesCost, repFee) | currency}}</p>
+    <p class='lead'>Rep Fee: {{repFee}}%</p>
+    <input type="number" placeholder='green going to reps' class="form-control" ng-model="repFee">
+<p class='lead'>Rep Fee Total: {{ repFeeTotal(costOfGoods, freightIn, salesCost, repFee) | currency}}</p>
 
-     <p class='title'>Dealer Rep Fee: {{dRepFee}}%</p>
-    <input type="number" placeholder='input Dealer Rep Fee' class="form-control" ng-model="dRepFee" >
- <p>Dealer Rep Fee Total: {{ dRepFeeTotal(costOfGoods, freightIn, salesCost, dRepFee) | currency}}</p>
+     <p class='lead'>Dealer Rep Fee: {{dRepFee}}%</p>
+    <input type="number" placeholder='green going to dealerz' class="form-control" ng-model="dRepFee" >
+ <p class='lead'>Dealer Rep Fee Total: {{ dRepFeeTotal(costOfGoods, freightIn, salesCost, dRepFee) | currency}}</p>
+
+   <p class='lead'>My Margin: {{margin}}%</p>
+    <input type="number" placeholder='how much green do I want?' class="form-control" ng-model="margin" >
+ <p class='lead'>Margin: {{ Margin(costOfGoods, freightIn, salesCost, repFee, dRepFee, returns, margin) | currency}}</p>
 
 
 
 
-<!-- 
- <h2 class='h'>Grand Total: {{ GrandTotal(costOfGoods, freightIn, salesCost, repFee, dealerRepFee, returns) | currency}}</h2>
- -->
+
+ <h2>Grand Total: {{ GrandTotal(costOfGoods, freightIn, salesCost, repFee, dRepFee, returns, margin) | currency}}</h2>
+
 
 
 
