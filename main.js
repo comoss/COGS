@@ -1,18 +1,18 @@
 var COGS = angular.module('COGS', []);
   COGS.controller('MainCtrl', ['$scope', function($scope) {
 
-  	  $scope.costOfGoods = '';
-      $scope.freightIn = '';
-      $scope.salesCost = '';
-      $scope.repFee = '';
-      $scope.returns = '';
-      $scope.dRepFee = '';
-      $scope.margin = ''; 
-      $scope.CoOp = '';
-      $scope.showExpense = '';
-      $scope.freightOut = '';
-      $scope.CCFee = '';
-      $scope.royalties = '';
+  	  $scope.costOfGoods = '0';
+      $scope.freightIn = '0';
+      $scope.salesCost = '0';
+      $scope.repFee = '0';
+      $scope.returns = '0';
+      $scope.dRepFee = '0';
+      $scope.margin = '0'; 
+      $scope.CoOp = '0';
+      $scope.showExpense = '0';
+      $scope.freightOut = '0';
+      $scope.CCFee = '0';
+      $scope.royalties = '0';
 
    
 
