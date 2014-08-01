@@ -36,42 +36,38 @@
   
 
   <div class='line'> <p class='lead'>Returns: {{returns}}%</p>
- <div class='align'>    <input type="number" placeholder='Returns go here  ﾟДﾟ' class="form-control" ng-model="returns"></div>
-<div class='align'>  <p class='lead'>returns: {{ Returns(costOfGoods, freightIn, salesCost, returns) | currency}}</p></div></div>
+ <div class='align'>    <input type="number" placeholder='Returns go here  ﾟДﾟ' class="form-control" ng-model="returns">
+<div class='align'>  <p class='lead'>returns: {{ Returns(costOfGoods, freightIn, salesCost, returns) | currency}}</p></div></div></div>
 <br>
 <div class='line'><p class='lead'>Rep Fee: {{repFee}}%</p>
-  <div class='align'> <input type="number" placeholder='green going to reps' class="form-control" ng-model="repFee"></div> 
-<div class='align'> <p class='lead'>Rep Fee Total: {{ repFeeTotal(costOfGoods, freightIn, salesCost, repFee) | currency}}</p></div></div>
+  <div class='align'> <input type="number" placeholder='green going to reps' class="form-control" ng-model="repFee">
+<div class='align'> <p class='lead'>Rep Fee Total: {{ repFeeTotal(costOfGoods, freightIn, salesCost, repFee) | currency}}</p></div></div></div>
 <br>
 <div class='line'><p class='lead'>Dealer Rep Fee: {{dRepFee}}%</p>
- <div class='align'>    <input type="number" placeholder='green going to dealerz' class="form-control" ng-model="dRepFee" ></div>
- <div class='align'> <p class='lead'>Dealer Rep Fee Total: {{ dRepFeeTotal(costOfGoods, freightIn, salesCost, dRepFee) | currency}}</p></div></div>
+ <div class='align'>    <input type="number" placeholder='green going to dealerz' class="form-control" ng-model="dRepFee" >
+ <div class='align'> <p class='lead'>Dealer Rep Fee Total: {{ dRepFeeTotal(costOfGoods, freightIn, salesCost, dRepFee) | currency}}</p></div></div></div>
 <br>
 <div class='line'><p class='lead'>Co Op: {{CoOp}}%</p>
- <div class='align'>    <input type="number" placeholder='CoOp' class="form-control" ng-model="CoOp"></div>
-<div class='align'> <p class='lead'>CoOp: {{ coop(costOfGoods, freightIn, salesCost, CoOp) | currency}}</p></div></div>
+ <div class='align'>    <input type="number" placeholder='CoOp' class="form-control" ng-model="CoOp">
+<div class='align'> <p class='lead'>CoOp: {{ coop(costOfGoods, freightIn, salesCost, CoOp) | currency}}</p></div></div></div>
 <br>
  
-<div class='line'><div class='line'> <p class='lead'>Show Expense: {{showExpense}}%</p>
- <div class='align'>    <input type="number" placeholder='Show Expense' class="form-control" ng-model="showExpense"></div>
-<div class='line'><div class='align'> <p class='lead'>Show Expenses: {{ ShowExpense(costOfGoods, freightIn, salesCost, showExpense) | currency}}</p></div></div>
+<div class='line'> <p class='lead'>Show Expense: {{showExpense}}%</p>
+ <div class='align'>    <input type="number" placeholder='Show Expense' class="form-control" ng-model="showExpense">
+<div class='align'> <p class='lead'>Show Expenses: {{ ShowExpense(costOfGoods, freightIn, salesCost, showExpense) | currency}}</p></div></div></div>
 <br>
  <div class='line'><p class='lead'>Frieght Out: {{freightOut | currency}}</p>
  <div class='align'>    <input type="number" placeholder='Freight Out'  class="form-control" ng-model="freightOut"></div></div>
 <br>
 <div class='line'><p class='lead'>Credit Card Fees: {{CCFee}}%</p>
- <div class='align'>    <input type="number" placeholder='Creditz' class="form-control" ng-model="CCFee"></div>
-<div class='align'> <p class='lead'>Credit Card Fees: {{ creditCard(costOfGoods, freightIn, salesCost, CCFee) | currency}}</p></div></div>
+ <div class='align'>    <input type="number" placeholder='Creditz' class="form-control" ng-model="CCFee"><div class='align'> <p class='lead'>Credit Card Fees: {{ creditCard(costOfGoods, freightIn, salesCost, CCFee) | currency}}</p></div></div></div>
 <br>
-<div class='line'>  <p class='lead'>Royalites: {{royalties | currency}}</p>
- <div class='align'>    <input type="number" placeholder='Ritz' class="form-control" ng-model="royalties"></div></div>
+<div class='line'>  <p class='lead'>Royalites: {{royalties | currency}}</p><div class='align'>    <input type="number" placeholder='Ritz' class="form-control" ng-model="royalties"></div></div>
 <br>
-<div class='line'> <p class='lead'>My Margin: {{margin}}%</p>
- <div class='align'>    <input type="number" placeholder='how much green do I want?' class="form-control" ng-model="margin" ></div></div>
+<div class='line'> <p class='lead'>My Margin: {{margin}}%</p><div class='align'>    <input type="number" placeholder='how much green do I want?' class="form-control" ng-model="margin" >
  <div class='align'> <p class='lead'>Margin: {{ Margin(costOfGoods, freightIn, salesCost, repFee, dRepFee, returns, royalties, CCFee, freightOut, showExpense, CoOp, margin) | currency}}</p></div></div></div>
 
 <br>
-
  <h2>Grand Total: {{ GrandTotal(costOfGoods, freightIn, salesCost, repFee, dRepFee, returns, royalties, CCFee, freightOut, showExpense, CoOp, margin) | currency}}</h2>
 
 
